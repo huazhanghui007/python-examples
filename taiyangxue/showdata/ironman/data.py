@@ -9,7 +9,10 @@
 #     line_legend, line_normal, line_spider, \
 #     bar_legend, bar_normal, bar_spider, \
 #     client_data, spider_data
-from ironman.nginx_log_data import *
+import sys
+sys.path.append("..")
+
+from  .nginx_log_data import  *
 
 class SourceData:
 
@@ -39,6 +42,6 @@ class SourceData:
     def pie(self):
         return client_data
 
-    # @property
-    # def wordcloud(self):
-    #     return spider_data
+    @property
+    def wordcloud(self):
+        return spider_data

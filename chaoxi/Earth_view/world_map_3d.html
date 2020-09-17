@@ -10,12 +10,12 @@
 
 </head>
 <body>
-    <div id="2942a86ac79b49ab8883f262932ee48b" style="width:1000px; height:1000px;"></div>
+    <div id="51afe796d10840b98dfacc12a4b8020e" style="width:1000px; height:1000px;"></div>
     <script>
-		var canvas_2942a86ac79b49ab8883f262932ee48b = document.createElement('canvas');
-        var mapChart_2942a86ac79b49ab8883f262932ee48b = echarts.init(
-		     canvas_2942a86ac79b49ab8883f262932ee48b, 'white', {width: 4096, height: 2048, renderer: 'canvas'});
-        var mapOption_2942a86ac79b49ab8883f262932ee48b = {
+		var canvas_51afe796d10840b98dfacc12a4b8020e = document.createElement('canvas');
+        var mapChart_51afe796d10840b98dfacc12a4b8020e = echarts.init(
+		     canvas_51afe796d10840b98dfacc12a4b8020e, 'white', {width: 4096, height: 2048, renderer: 'canvas'});
+        var mapOption_51afe796d10840b98dfacc12a4b8020e = {
     "backgroundColor": "#00BBFF",
     "animation": true,
     "animationThreshold": 2000,
@@ -1023,10 +1023,15 @@
         "axisPointer": {
             "type": "line"
         },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
         "textStyle": {
             "fontSize": 14
         },
-        "borderWidth": 0
+        "borderWidth": 0,
+        "padding": 5
     },
     "visualMap": {
         "show": true,
@@ -1061,14 +1066,14 @@
         }
     ]
 };
-        mapChart_2942a86ac79b49ab8883f262932ee48b.setOption(mapOption_2942a86ac79b49ab8883f262932ee48b);
+        mapChart_51afe796d10840b98dfacc12a4b8020e.setOption(mapOption_51afe796d10840b98dfacc12a4b8020e);
 
-		var chart_2942a86ac79b49ab8883f262932ee48b = echarts.init(
-        document.getElementById('2942a86ac79b49ab8883f262932ee48b'), 'white', {renderer: 'canvas'});
-		var options_2942a86ac79b49ab8883f262932ee48b = {
+		var chart_51afe796d10840b98dfacc12a4b8020e = echarts.init(
+        document.getElementById('51afe796d10840b98dfacc12a4b8020e'), 'white', {renderer: 'canvas'});
+		var options_51afe796d10840b98dfacc12a4b8020e = {
            "globe": {
            "show": true,
-		   "baseTexture": mapChart_2942a86ac79b49ab8883f262932ee48b,
+		   "baseTexture": mapChart_51afe796d10840b98dfacc12a4b8020e,
            shading: 'lambert',
             light: {
                 ambient: {
@@ -1080,7 +1085,7 @@
              }
 
 		   }};
-		chart_2942a86ac79b49ab8883f262932ee48b.setOption(options_2942a86ac79b49ab8883f262932ee48b);
+		chart_51afe796d10840b98dfacc12a4b8020e.setOption(options_51afe796d10840b98dfacc12a4b8020e);
     </script>
 </body>
 </html>

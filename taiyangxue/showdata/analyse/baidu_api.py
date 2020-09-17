@@ -10,7 +10,7 @@ import json
 import requests
 import os
 
-ak = "<换成你的ak>" # 百度 ak 自行申请 http://lbsyun.baidu.com/index.php?title=webapi/ip-api
+ak = "NOL9w5q6WznSbGEvPNKSoVV3uMaTZovz" # 百度 ak 自行申请 http://lbsyun.baidu.com/index.php?title=webapi/ip-api
 
 ipCache = {}
 if os.path.exists("ip_cache.txt"):

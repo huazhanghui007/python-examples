@@ -1,6 +1,8 @@
 import re
 import os
 import datetime
+import sys
+sys.path.append("..")
 from baidu_api import ip2province
 import pandas as pd
 import openpyxl
@@ -49,6 +51,7 @@ def parse(line):
         t = datetime.datetime.strptime(time, "%d/%b/%Y:%H:%M:%S")  # 将时间格式化成友好的格式
         dic['time'] = t
         dic['hour'] = t.hour
+        dic['day'] = str(t.year) + '-' + str(t.month) + '-' + str(t.day)
         # request处理
         request = result.group("request")
         a = request.split()[1].split("?")[0]  # 往往url后面会有一些参数，url和参数之间用?分隔，取出不带参数的url
@@ -88,12 +91,16 @@ def analyse(lst, datafile):
     # 统计时段
     hour_count_df = pd.value_counts(df['hour']).reset_index().rename(columns={"index": "hour", "hour": "count"}).sort_values(by='hour')
 
+    # 按天统计
+    day_count_df = pd.value_counts(df['day']).reset_index().rename(columns={"index": "day", "day": "count"}).sort_values(by='day')
+
     # 统计客户端
     ua_count_df = pd.value_counts(df['ua']).reset_index().rename(columns={"index": "ua", "ua": "count"})
 
     # 数据存储
     to_excel(province_count_df, datafile, sheet_name='省份')
     to_excel(hour_count_df, datafile, sheet_name='按时')
+    to_excel(day_count_df, datafile, sheet_name='按天')
     to_excel(ua_count_df, datafile, sheet_name='客户端')
     
 def to_excel(dataframe, filepath, sheet_name):
